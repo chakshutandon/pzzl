@@ -57,7 +57,14 @@ def spf():
 
 @bp.route('/puzzle/a-star', methods=['POST'])
 def a_star():
-    response = {}
+    data = request.json
+    p = Puzzle(puzzle=data["puzzle"])
+    g = p.convert_to_graph()
+    dist, pred = g.a_star(data["start"], data["goal"], p.heuristic)
+    response = {
+        'dist': dist,
+        'pred': pred
+    }
     return jsonify(response)
 
 @bp.route('/puzzle/hill-climbing', methods=['POST'])
