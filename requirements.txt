@@ -38,7 +38,7 @@ mccabe==0.6.1
 mpmath==1.1.0
 oauthlib==2.0.6
 PAM==0.4.2
-protobuf==3.7.1
+protobuf==3.18.3
 pyasn1==0.4.2
 pyasn1-modules==0.2.1
 pycodestyle==2.5.0
